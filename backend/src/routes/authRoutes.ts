@@ -56,6 +56,7 @@ router.post("/register", async (req: Request, res: Response): Promise<void> => {
       username,
       password: hashedPassword,
       type,
+      account_name: type === "staff" ? full_name : undefined, // Set account_name for staff
       created_at: new Date(),
       updated_at: new Date(),
     });
